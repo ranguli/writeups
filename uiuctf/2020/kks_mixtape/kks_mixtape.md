@@ -10,6 +10,6 @@ from **waveform view** to **spectogram view**, a tutorial on which can be found
 
 After doing so, the flag will reveal itself:
 
-![such_audacity.png](such_audacity.png)
+![suchaudacity.png](suchaudacity.png)
 
 This is not unlike how Aphex Twin hides images inside their audio!
