@@ -1,15 +1,15 @@
-# security_question - uiuctf 2020
+# UIUCTF 2020
+## security_question
 
-_Someone just asked a very interesting question online. Can you help them solve their problem?
+_Someone just asked a very interesting question online. Can you help them solve their problem?_
 
-author: Husincostan_
+This challenge was made by Husincostan.
 
-
-The challenge link, `https://security.chal.uiuc.tf/`, brings us to a fake
+The challenge link `https://security.chal.uiuc.tf/` brings us to a fake
 StackOverflow page with the poster complaining that their friend was able to
-access the `hidden_poem.txt` file in the root directory (`/`) on the server.
+access the `hidden_poem.txt` file in the root directory (`/`) on the server. They post the following code snippet looking for help:
 
-```
+```python
 @app.route('/getpoem')
 def get_poem():
     poemname = request.args.get('name')
@@ -64,7 +64,7 @@ get the following:
 '/home/user/poems'
 ```
 
-We know that `poemdir` is the `poems` subdirectory inside the current working directory. Keep in mind that our interest is in the root `/` directory to get `hidden_poem.txt`.
+We know that `poemdir` is the `poems` subdirectory inside the current working directory. Keep in mind that our interest is in the root `/` directory to get `hidden_poem.txt`. Another join is performed is the name of the file.
 
 ```
 >>> poemname = "poem.txt"
@@ -79,7 +79,7 @@ Because of the way that `os.path.join()` works, if we set `poemname` to `/hidden
 /home/user/poems//hidden_poem.txt
 ```
 
-Instead we'll just get:
+Instead we'll actually just get:
 
 ```
 /hidden_poem.txt
